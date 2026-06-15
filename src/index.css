@@ -1,0 +1,495 @@
+/* GHARKAKHANA - CSS Design System & Utility Styles */
+
+:root {
+  /* Colors - HSL Saffron Theme */
+  --primary: hsl(24, 95%, 53%);
+  --primary-hover: hsl(24, 95%, 45%);
+  --primary-rgb: 249, 115, 22;
+  --secondary: hsl(142, 60%, 25%);
+  --secondary-light: hsl(142, 60%, 96%);
+  
+  --veg: hsl(142, 72%, 29%);
+  --non-veg: hsl(0, 84%, 48%);
+  
+  --bg-main: hsl(30, 20%, 98%);
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-nav: rgba(255, 255, 255, 0.8);
+  
+  --text-main: hsl(210, 20%, 15%);
+  --text-muted: hsl(210, 10%, 45%);
+  --text-inverse: hsl(0, 0%, 100%);
+  
+  --border-color: hsl(210, 15%, 90%);
+  --border-light: hsl(210, 15%, 95%);
+  
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 12px 20px -8px rgba(0, 0, 0, 0.06);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Theme overrides */
+[data-theme="dark"] {
+  --bg-main: hsl(220, 20%, 10%);
+  --bg-card: hsl(220, 20%, 13%);
+  --bg-nav: rgba(26, 31, 41, 0.85);
+  
+  --text-main: hsl(210, 15%, 92%);
+  --text-muted: hsl(210, 10%, 65%);
+  
+  --border-color: hsl(220, 15%, 20%);
+  --border-light: hsl(220, 15%, 16%);
+  
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 16px -6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 12px 20px -8px rgba(0, 0, 0, 0.35);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --glass-bg: rgba(26, 31, 41, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+/* General Resets & Baselines */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Overwrite Vite's Root layout */
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  border-inline: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+.serif-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: italic;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px 0 rgba(var(--primary-rgb), 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(var(--primary-rgb), 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--border-light);
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
+
+.btn-veg {
+  background: var(--secondary-light);
+  color: var(--veg);
+  border: 1px solid var(--veg);
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-veg:hover {
+  background: var(--veg);
+  color: white;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-icon-only {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* Cards & Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+}
+
+.premium-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-main);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
+}
+
+/* Food Diet Indicator Badges */
+.veg-dot, .nonveg-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--veg);
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.nonveg-dot {
+  border-color: var(--non-veg);
+}
+
+.veg-dot::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--veg);
+  border-radius: 50%;
+}
+
+.nonveg-dot::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid var(--non-veg);
+}
+
+/* General Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+}
+
+.badge-veg {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--veg);
+}
+
+.badge-nonveg {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--non-veg);
+}
+
+/* Hide content when section is active */
+.hidden {
+  display: none !important;
+}
+
+/* Navigation items */
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+/* Navbar Responsiveness Rules */
+.desktop-nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.burger-menu-btn {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav-links {
+    display: none !important;
+  }
+  .burger-menu-btn {
+    display: flex !important;
+  }
+}
+
+/* Hero Section Responsiveness Rules */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 50px;
+  }
+  
+  .hero-content-responsive {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .hero-title-responsive {
+    font-size: 2.5rem !important;
+  }
+  
+  .cta-group-responsive {
+    justify-content: center !important;
+  }
+  
+  .floating-card-mob1 {
+    left: 10px !important;
+    bottom: -10px !important;
+  }
+  
+  .floating-card-mob2 {
+    right: 10px !important;
+    top: -10px !important;
+  }
+}
+
+/* Customizer Section Responsiveness Rules */
+@media (max-width: 900px) {
+  #customizer-section > div > div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+  #customizer-section div[style*="position: sticky"] {
+    position: static !important;
+  }
+}
+
+/* Plans Section Responsiveness Rules */
+@media (max-width: 900px) {
+  #plans-section > div > div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+  #plans-section div[style*="position: sticky"] {
+    position: static !important;
+  }
+}
+
+/* Pincode Checker Responsiveness Rules */
+@media (max-width: 900px) {
+  .checkerCard {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 24px !important;
+  }
+}
+
+/* Dashboard Responsiveness Rules */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* Contact Responsiveness Rules */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
