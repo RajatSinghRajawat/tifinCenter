@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X, ChefHat, User, ShoppingBag } from 'lucide-react';
 
 export default function Navbar({ currentTab, setCurrentTab, theme, toggleTheme, hasActiveSubscription, cartItemsCount }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const navLinks = [
     { id: 'home', label: 'Home' },

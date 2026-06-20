@@ -136,7 +136,7 @@ export default function Customizer({ onAddCustomTiffinToCart }) {
           </div>
         )}
 
-        <div style={styles.grid}>
+        <div className="customizer-grid">
           {/* Controls Column */}
           <div style={styles.controlsCol}>
             {/* Step 1: Select Breads */}
@@ -268,7 +268,7 @@ export default function Customizer({ onAddCustomTiffinToCart }) {
           </div>
 
           {/* Visual Display Summary Column */}
-          <div style={styles.summaryCol}>
+          <div style={styles.summaryCol} className="sticky-col">
             <div className="glass-card" style={styles.summaryCard}>
               <div style={styles.visualTiffin}>
                 <img 
@@ -327,7 +327,7 @@ export default function Customizer({ onAddCustomTiffinToCart }) {
               </div>
 
               {/* Submit Buttons */}
-              <div style={styles.btnRow}>
+              <div style={styles.btnRow} className="btn-row-responsive">
                 <button onClick={handleReset} className="btn btn-secondary" style={{ flex: '1' }}>
                   <RotateCcw size={16} /> Reset
                 </button>

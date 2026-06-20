@@ -46,7 +46,7 @@ export default function Dashboard({ activeSub, onCancelSubscription, onViewPlans
     return (
       <section style={styles.section} className="section-padding">
         <div className="container" style={styles.container}>
-          <div className="glass-card" style={styles.noSubCard}>
+          <div className="glass-card no-sub-card-responsive" style={styles.noSubCard}>
             <AlertTriangle size={56} color="var(--primary)" />
             <h2 style={styles.noSubTitle}>No Active Subscription</h2>
             <p style={styles.noSubDesc}>

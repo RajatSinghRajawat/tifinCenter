@@ -122,7 +122,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
         </div>
 
         {/* Dynamic Calculator Form */}
-        <div style={styles.calcGrid}>
+        <div className="plans-grid">
           {/* Config Controls */}
           <div className="premium-card" style={styles.configCard}>
             <h3 style={styles.calcHeader}>Configure Subscription</h3>
@@ -277,7 +277,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
           </div>
 
           {/* Pricing Box Summary */}
-          <div style={styles.summaryCol}>
+          <div style={styles.summaryCol} className="sticky-col">
             <div className="glass-card animate-fade" style={styles.summaryCard}>
               <div style={styles.priceHeader}>
                 <span className="badge badge-primary">Subscription Breakdown</span>
@@ -346,7 +346,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
         {/* CHECKOUT MODAL WINDOW */}
         {showCheckout && (
           <div style={styles.modalOverlay} className="animate-fade">
-            <div className="glass-card" style={styles.modalContent}>
+            <div className="glass-card modal-content-responsive" style={styles.modalContent}>
               {/* Modal Header */}
               <div style={styles.modalHeader}>
                 <div>
@@ -397,7 +397,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
                     />
                   </div>
 
-                  <div style={styles.formRow}>
+                  <div style={styles.formRow} className="form-row-responsive">
                     <div className="form-group" style={{ flex: 1 }}>
                       <label className="form-label">Pincode</label>
                       <input 
@@ -493,7 +493,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
                         <label className="form-label">Card Number</label>
                         <input type="text" className="form-control" placeholder="4111 •••• •••• 1111" required />
                       </div>
-                      <div style={styles.formRow}>
+                      <div style={styles.formRow} className="form-row-responsive">
                         <input type="text" className="form-control" placeholder="MM/YY" style={{ flex: 1 }} required />
                         <input type="password" className="form-control" placeholder="CVV" style={{ flex: 1 }} required />
                       </div>
@@ -509,7 +509,7 @@ export default function Plans({ onSubscribeSuccess, cartItems }) {
                     </div>
                   )}
 
-                  <div style={styles.checkoutBtns}>
+                  <div style={styles.checkoutBtns} className="btn-row-responsive">
                     <button onClick={() => setCheckoutStep(1)} className="btn btn-secondary" style={{ flex: 1 }}>
                       Back
                     </button>

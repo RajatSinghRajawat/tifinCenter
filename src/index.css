@@ -450,28 +450,56 @@ p {
 }
 
 /* Customizer Section Responsiveness Rules */
+.customizer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.sticky-col {
+  position: sticky;
+  top: 100px;
+}
+
 @media (max-width: 900px) {
-  #customizer-section > div > div[style*="display: grid"] {
+  .customizer-grid {
     grid-template-columns: 1fr !important;
   }
-  #customizer-section div[style*="position: sticky"] {
+  .sticky-col {
     position: static !important;
   }
 }
 
 /* Plans Section Responsiveness Rules */
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+}
+
 @media (max-width: 900px) {
-  #plans-section > div > div[style*="display: grid"] {
+  .plans-grid {
     grid-template-columns: 1fr !important;
-  }
-  #plans-section div[style*="position: sticky"] {
-    position: static !important;
   }
 }
 
 /* Pincode Checker Responsiveness Rules */
+.checker-card {
+  width: 100%;
+  max-width: 960px;
+  padding: 40px;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+
 @media (max-width: 900px) {
-  .checkerCard {
+  .checker-card {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
     padding: 24px !important;
@@ -493,3 +521,33 @@ p {
     gap: 32px !important;
   }
 }
+
+/* Helper Responsiveness Utilities */
+@media (max-width: 600px) {
+  .form-row-responsive {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .stats-container-responsive {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  
+  .modal-content-responsive {
+    padding: 20px !important;
+    border-radius: 16px !important;
+    max-height: 95vh !important;
+  }
+
+  .no-sub-card-responsive {
+    padding: 30px 16px !important;
+  }
+
+  .btn-row-responsive {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}
+

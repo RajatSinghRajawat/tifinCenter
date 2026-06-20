@@ -35,7 +35,7 @@ export default function PincodeChecker() {
   return (
     <section style={styles.section} className="section-padding">
       <div className="container" style={styles.container}>
-        <div className="glass-card" style={styles.checkerCard}>
+        <div className="glass-card checker-card">
           <div style={styles.leftCol}>
             <span className="badge badge-primary">Quick Check</span>
             <h2 style={styles.title}>Do We Serve In <span className="serif-title" style={{ color: 'var(--primary)' }}>Your Area?</span></h2>

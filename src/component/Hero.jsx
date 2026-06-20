@@ -36,7 +36,7 @@ export default function Hero({ onViewMenu, onViewPlans }) {
           </div>
           
           {/* Stats Badges */}
-          <div style={styles.statsContainer}>
+          <div style={styles.statsContainer} className="stats-container-responsive">
             <div style={styles.statCard}>
               <div style={{ ...styles.statIcon, backgroundColor: 'rgba(249, 115, 22, 0.1)', color: 'var(--primary)' }}>
                 <Flame size={20} />
